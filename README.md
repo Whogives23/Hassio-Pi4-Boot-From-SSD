@@ -1,7 +1,7 @@
 # Hassio-on-Pi4
-##Setup Pi for Boot-From-SSD
-
 This is just a how-to on installing Hassos on Pi4 using docker on Raspberry Pi OS - lite
+
+##Setup Pi for Boot-From-SSD
 1. Download Raspberry Pi OS - lite from https://www.raspberrypi.org/downloads/raspberry-pi-os/
 2. Flash This image to an SD card using BalenaEtcher or RaspberryPi Imager
 3. Add a blank file called ssh(no extension) to the root directory on boot partition
