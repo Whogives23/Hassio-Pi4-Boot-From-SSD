@@ -1,7 +1,18 @@
 # Hassio-on-Pi4
-This is just a how-to on installing Hassos on Pi4 using docker on Raspberry Pi OS - lite
+This is just a how-to on installing Hassos on Pi4 using docker on Raspberry Pi OS - lite.
 
-##Setup Pi for Boot-From-SSD
+__As of the time of this writeup, the following is true:__
+1. Raspberry Pi 4 Boot from USB was recently released in Beta
+2. Raspberry Pi OS images available on the official site does not support this feature, so an os update is needed to support boot from USB.
+3. HassOs does NOT support Boot from USB(flashing the image to a USB, and attempting to boot ends in a Black screen, and no further progress)
+3. The Official Hassio on Docker installation detailed on the Home-Assistant Webpage does not support Supervisor functions(Snapshot,Add-on Installation and management, System Reboot and Shutdown). This is particularly an issue if you are coming from HassOs in a previous setup, and want to reinstate a snapshot made on that install.
+
+__These are the reasons I personally went through the effort of installing Hassio on an SSD__
+1. Having Home-Assistant installed on SD, with a good number of sensors or entities that have a lot of state changes, shortens the life of an SD card. Its a case of when not if your SD card will fail. In my case, this became evident when State history started dropping, and DB locks and errors became commonplace
+2. Up to this point, I have been running a Generic HassOs install on an Rpi4. taking frequent snapshots. Snapshots are also automatable within Home-Assistant.
+3. There are significant performance increases documented when running Raspberry Pi OS on SSD rather than SD Card. So much so that even running a Docker Instance on top of RPiOS-Lite on SSD is still exceptionally faster than HassOs on SD Card.
+
+## Setup Pi for Boot-From-SSD
 1. Download Raspberry Pi OS - lite from https://www.raspberrypi.org/downloads/raspberry-pi-os/
 2. Flash This image to an SD card using BalenaEtcher or RaspberryPi Imager
 3. Add a blank file called ssh(no extension) to the root directory on boot partition
@@ -68,7 +79,7 @@ This is just a how-to on installing Hassos on Pi4 using docker on Raspberry Pi O
 24. Power up your Pi
 25: You should now be Booting from SD
 
-##Install Docker
+## Install Docker
 
 1. Run the following Command to install Docker:
    ```
