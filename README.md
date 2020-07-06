@@ -1,5 +1,5 @@
-# Hassio-on-Pi4
-This is just a how-to on installing Hassos on Pi4 using docker on Raspberry Pi OS - lite.
+# Hassio-on-Pi4-Boot-From-USB/SSD
+This is just a how-to on installing Hassos on Pi4 Booting from USB/SSD, using docker on Raspberry Pi OS - lite.
 
 __As of the time of this writeup, the following is true:__
 1. Raspberry Pi 4 Boot from USB was recently released in Beta
